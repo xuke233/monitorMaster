@@ -128,7 +128,31 @@ namespace twpx
         }
 
         //截图
+        public void GetJPEG(int i)
+        {
+            if (i < 0 || i > CameraList.Count) return;
+            try
+            {
+                CameraList[i].saveJPEG();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
+        public void GetBMP(int i)
+        {
+            if (i < 0 || i > CameraList.Count) return;
+            try
+            {
+                CameraList[i].saveBMP();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         //
     }
 }

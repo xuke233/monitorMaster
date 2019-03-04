@@ -71,17 +71,23 @@ namespace twpx
         //抓图JPG
         private void button3_Click(object sender, EventArgs e)
         {
-
+            if (listView1.SelectedItems.Count != 1) return;//只能选择一个预览
+            if (i == Scommon.getCamera(this.listView1.SelectedItems[0].SubItems[1].Text)) return;//这次选择的和上次一样
+            i = Scommon.getCamera(this.listView1.SelectedItems[0].SubItems[1].Text);
+            Scommon.GetJPEG(i - 1);
         }
         //抓图BMP
         private void button4_Click(object sender, EventArgs e)
         {
-
+            if (listView1.SelectedItems.Count != 1) return;//只能选择一个预览
+            if (i == Scommon.getCamera(this.listView1.SelectedItems[0].SubItems[1].Text)) return;//这次选择的和上次一样
+            i = Scommon.getCamera(this.listView1.SelectedItems[0].SubItems[1].Text);
+            Scommon.GetBMP(i - 1);
         }
         //退出
         private void button5_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
         //预览画面，主页面
         private void pictureBox1_Click(object sender, EventArgs e)
